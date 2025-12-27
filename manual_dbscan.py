@@ -1,5 +1,5 @@
 
-# 手动实现 DBSCAN：RegionQuery + ExpandCluster（队列BFS扩展）
+# 从0实现 DBSCAN：RegionQuery + ExpandCluster（队列BFS扩展）
 # labels: 0=未分配, -1=噪声, 1..K=簇ID
 from __future__ import annotations
 import numpy as np
@@ -13,7 +13,6 @@ def euclidean_distance(a: np.ndarray, b: np.ndarray) -> float:
 def get_neighbors(X: np.ndarray, idx: int, eps: float) -> list[int]:
     """
     RegionQuery：返回 eps 邻域内点索引（含自身）。
-    论文定义通常用 dist <= eps，这里用 <= 与论文一致。
     """
     neighbors = []
     for j in range(len(X)):

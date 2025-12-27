@@ -79,7 +79,7 @@ def main():
 
     # k-距离图 Two Moons (n=1000, noise=0.06), k=5
 
-    Xk, _ = make_moons(n_samples=1000, noise=0.06, random_state=42)
+    Xk, _ = make_moons(n_samples=500, noise=0.1, random_state=42)
     plot_k_distance(Xk, k=5, fname="fig5_k_distance_k5.png")
 
   
